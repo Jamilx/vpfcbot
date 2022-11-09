@@ -16,18 +16,12 @@ def start(message):
     bot.reply_to(message, f"Hello,{username}!")
 
 
-@server.route(f"/{BOT_TOKEN}", methods = ["POST"])
+@server.route(f"/{BOT_TOKEN}", methods=["POST"])
 def redirect_message():
-    json_string = request.get.data().decode('utf-8')
+    json_string = request.get_data().decode("utf-8")
     update = telebot.types.Update.de_json(json_string)
     bot.process_new_updates([update])
-    return '!', 200
-
-
-
-
-
-
+    return "!", 200
 
 if __name__ == "__main__":
     bot.remove_webhook()
