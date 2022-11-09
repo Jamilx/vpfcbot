@@ -13,7 +13,7 @@ logger.setLevel(logging.DEBUG)
 @bot.message_handler(commands={"start"})
 def start(message):
     username = message.from_user.username
-    bot.replay_to(message, f"Hello,{username}!")
+    bot.replygit_to(message, f"Hello,{username}!")
 
 
 @server.route(f"/{BOT_TOKEN}", methods = ["POST"])
